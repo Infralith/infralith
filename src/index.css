@@ -1,1 +1,73 @@
 @import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-background: #101622;
+  --color-foreground: #e2e8f0;
+  --color-surface: #0f1729;
+  --color-surface-alt: #1a2236;
+  --color-border: #1e293b;
+  --color-border-light: #334155;
+  --color-muted: #94a3b8;
+  --color-muted-foreground: #64748b;
+
+  --color-primary: #1152d4;
+  --color-primary-foreground: #ffffff;
+  --color-primary-muted: rgba(17, 82, 212, 0.15);
+
+  --color-node-service: #1152d4;
+  --color-node-deploy: #8b5cf6;
+  --color-node-pod: #10b981;
+
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-display);
+}
+
+/* Canvas grid background */
+.canvas-grid {
+  background-color: #0a0f18;
+  background-image: radial-gradient(circle, #1e293b 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+/* Node glow effects */
+.node-glow-primary {
+  box-shadow: 0 0 15px rgba(17, 82, 212, 0.3);
+}
+.node-glow-success {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+.node-glow-deploy {
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+}
+
+/* React Flow overrides */
+.react-flow__background {
+  background-color: #0a0f18 !important;
+}
+.react-flow__edge-path {
+  stroke: #334155 !important;
+  stroke-width: 2 !important;
+}
+.react-flow__controls {
+  display: none !important;
+}
