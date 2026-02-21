@@ -1,9 +1,15 @@
+import { useAppStore } from '@/store/app.store';
+import { ChatPage } from '@/pages/ChatPage';
+import { ArchitectPage } from '@/pages/ArchitectPage';
+
 function App() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50">
-      <h1 className="text-4xl font-bold text-gray-900">Infralith</h1>
-    </div>
-  );
+  const currentView = useAppStore((s) => s.currentView);
+
+  if (currentView === 'architect') {
+    return <ArchitectPage />;
+  }
+
+  return <ChatPage />;
 }
 
 export default App;
